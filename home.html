@@ -1,14 +1,60 @@
 <html>
     <head>
         <title>Lacc</title>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="https://use.fontawesome.com/1f7de367f8.js"></script>
+
     </head>
     <body>
-        <header>Lacc</header>
+        <header>
+            Lacc
+            <div class="header-icons">
+                <i class="fa fa-2x fa-user"></i>
+                <i class="fa fa-2x fa-star"></i>
+                <i class="fa fa-2x fa-search"></i>
+            </div>
+        </header>
         <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="btn-group">                   
+                        <button>Today</button>
+                        <button>Week</button>
+                        <button>Month</button>
+                        <button>Total</button>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="recent-foods-header">
+                        RECENT FOODS
+                    </div>
+                    <table class="recent-foods">
+                        <tr>
+                            <td class="recent-food-name">2% Milk</td>
+                            <td class="recent-lac-amount">17mg</td>
+                            <td class="recent-fav"><i class="fa fa-star favorite"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="recent-food-name">Cottage Cheese</td>
+                            <td class="recent-lac-amount">24mg</td>
+                            <td class="recent-fav"><i class="fa fa-star"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="recent-food-name">Ricotta Cheese</td>
+                            <td class="recent-lac-amount">14mg</td>
+                            <td class="recent-fav"><i class="fa fa-star favorite"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="add-food">
+                    <button>ADD FOOD</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>

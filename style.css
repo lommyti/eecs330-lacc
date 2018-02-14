@@ -23,3 +23,87 @@ header{
 .home-container input{
     margin: 2px 0px;
 }
+
+.btn-group{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-group button{
+    width: 100%;
+    background: #ddd;
+    border: none;
+}
+
+.btn-group button:focus{
+    background: #aaa;
+    box-shadow: none;
+}
+
+.recent-foods-header{
+    width:100%;
+    margin-top: 10px;
+    background: #ddd; 
+    padding: 1px;
+    letter-spacing: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.recent-foods{
+    width: 100%;
+}
+
+.recent-foods td{
+    padding: 10px;
+}
+
+.recent-foods tr:nth-child(even) {
+    background: #eee;
+}
+
+.recent-foods tr:nth-child(odd) {
+    background: #ccc;
+}
+
+.recent-foods tr:hover{
+    background: #fff;
+}
+
+.recent-foods .recent-fav{
+    width: 10%;
+}
+
+.recent-foods .recent-lac-amount{
+    width: 20%;
+}
+
+.recent-foods .recent-food-name{
+    width: 70%;
+}
+
+.favorite{
+    color: gold;
+}
+
+.add-food{
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.add-food button{
+    font-size: 24px;
+    padding: 20px 70px;
+    background: #ddd;
+    border: none;
+}
+
+.header-icons{
+    display: inline-block;
+    float:right;
+}
+
+.header-icons i{
+    margin-left: 20px;
+}
