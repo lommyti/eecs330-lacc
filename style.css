@@ -4,6 +4,22 @@ html, body{
 }
 
 header{
-    background:#eee;
+    background: #eee;
     padding: 20px;
+}
+
+.home-container{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.home-container h1{
+    font-size: 64px;
+}
+
+.home-container button{
+    margin-top: 10px;
+}
+.home-container input{
+    margin: 2px 0px;
 }
