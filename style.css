@@ -112,3 +112,20 @@ header{
 .header-icons i{
     margin-left: 20px;
 }
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: url(#temperature-gradient);
+    stroke-width: 4px;
+}
