@@ -30,7 +30,8 @@ header{
 }
 
 .btn-group button{
-    width: 100%;
+    width: 25%;
+    float:left;
     background: #ddd;
     border: none;
 }
@@ -52,6 +53,10 @@ header{
 
 .recent-foods{
     width: 100%;
+}
+
+.recent-foods th{
+    padding: 10px;
 }
 
 .recent-foods td{
@@ -94,7 +99,7 @@ header{
 
 .add-food button{
     font-size: 24px;
-    padding: 20px 70px;
+    padding: 5px 100px;
     background: #ddd;
     border: none;
 }
