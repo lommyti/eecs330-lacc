@@ -1,11 +1,25 @@
 html, body{
     font-family: 'Karla', sans-serif;
     margin: 0;
+    background:#fafafa;
 }
 
 header{
-    background: #eee;
+    background: #46ACC2;
+    color:#fff;
     padding: 20px;
+}
+
+.header-wordmark{
+    font-size:24px; 
+    font-weight: 700;
+}
+
+header img{
+    display: inline-block;
+    -webkit-filter: invert(100%);
+    width:30px; 
+    margin-top:-8px;
 }
 
 .home-container{
@@ -15,10 +29,16 @@ header{
 
 .home-container h1{
     font-size: 64px;
+    font-weight: 
+}
+
+.home-container img{
+    width:60px;
 }
 
 .home-container button{
     margin-top: 10px;
+    background: #46ACC2;
 }
 .home-container input{
     margin: 2px 0px;
@@ -26,7 +46,7 @@ header{
 
 .btn-group{
     width: 100%;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .btn-group button{
@@ -43,7 +63,7 @@ header{
 
 .recent-foods-header{
     width:100%;
-    margin-top: 10px;
+    margin-top: 50px;
     background: #ddd; 
     padding: 1px;
     letter-spacing: 10px;
@@ -71,10 +91,6 @@ header{
     background: #ccc;
 }
 
-.recent-foods tr:hover{
-    background: #fff;
-}
-
 .recent-foods .recent-fav{
     width: 10%;
 }
@@ -90,6 +106,13 @@ header{
 .favorite{
     color: gold;
 }
+
+
+.recent-foods tr:hover{
+    background: #fff;
+    color:#000;
+}
+
 
 .add-food{
     width: 100%;
@@ -113,6 +136,7 @@ header{
     margin-left: 20px;
 }
 
+
 .axis path,
 .axis line {
     fill: none;
@@ -128,4 +152,14 @@ header{
     fill: none;
     stroke: url(#temperature-gradient);
     stroke-width: 4px;
+    transform: scaleX(1);
+    margin-top: 0px;
+}
+
+#added-food{
+    display:none;
+}
+
+.graph-container{
+    background:#eee;
 }
