@@ -103,6 +103,19 @@ function updateData() {
         svg.select(".y.axis") // change the y axis
             .duration(750)
             .call(yAxis);
-}
+    
+        var x = document.getElementById("added-food");
+        if (x.style.display === "" | x.style.display === "none") {
+            x.style.display = "table-row";
+        }
+    }
 
+
+function changeSelection(id) {
+    console.log(id);
+    var x = document.getElementById(id);
+    if(x.style.color === 'gold'){
+        x.style.color = '#000';
+    }
+}
 
