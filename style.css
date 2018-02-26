@@ -141,10 +141,12 @@ header img{
     text-align: right;
 }
 
-.recent-foods .recent-fav i{
+.recent-foods .spaced{
     margin-right:10px;
     display:inline-block;
 }
+
+
 
 .recent-foods .recent-fav .red-flag{
     color:#FF614C;
@@ -274,7 +276,22 @@ header img{
 }
 
 .graph-container{
-    background:#eee;
+    background:url(img/graph-lines.jpg);
+    background-size:cover;
+}
+
+.graph-horiz{
+    margin-top:10px;
+    margin-left:190px;
+    word-spacing: 26px;
+}
+
+.graph-vert{
+    position:absolute;
+    margin-top:-375px;
+    margin-left:-60px;
+    line-height:16px;
+    text-align: right;
 }
 
 .center{
