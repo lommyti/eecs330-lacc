@@ -20,7 +20,7 @@
             </a>
             <div class="header-icons">
                 <a href="profile.html"><i class="fa fa-2x fa-user"></i></a>
-                <i class="fa fa-2x fa-star"></i>
+                <a><i class="fa fa-2x fa-star" data-toggle="modal" data-target="#mainModal2"></i></a>
                 <a><i class="fa fa-2x fa-search" data-toggle="modal" data-target="#mainModal"></i></a>
             </div>
         </header>
@@ -29,7 +29,7 @@
                 <div class="col-md-7">
                     <div class="graph-border">
                         <div class="btn-group">                   
-                            <button>Today</button>
+                            <button id="btn-active">Today</button>
                             <button>Week</button>
                             <button>Month</button>
                             <button>Total</button>
@@ -42,30 +42,34 @@
                 <div class="col-md-5">
                     <div class="recent-foods-border">
                     <div class="recent-foods-header">
-                        RECENT FOODS
+                        Recent Foods
                     </div>
-                    <table class="recent-foods">
-                        <tr id="added-food">
-                            <td class="recent-food-name">1% Milk</td>
-                            <td class="recent-lac-amount">12mg</td>
-                            <td class="recent-fav"><i class="fa fa-star favorite"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="recent-food-name">2% Milk</td>
-                            <td class="recent-lac-amount">17mg</td>
-                            <td class="recent-fav"><i class="fa fa-star favorite"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="recent-food-name">Cottage Cheese</td>
-                            <td class="recent-lac-amount">24mg</td>
-                            <td class="recent-fav"><i class="fa fa-star"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="recent-food-name">Ricotta Cheese</td>
-                            <td class="recent-lac-amount">14mg</td>
-                            <td class="recent-fav"><i class="fa fa-star favorite"></i></td>
-                        </tr>
-                    </table>
+                    <div class="recent-foods">
+                        <div id="added-food" class="recent-food-entry">
+                            <img src="img/1percentmilk.jpg">
+                            <h1 class="recent-food-name">1% Milk</h1>
+                            <h2 class="recent-lac-amount">12mg</h2>
+                            <h3 class="recent-fav"><i class="fa fa-star favorite" id="star5" onclick="changeSelection('star5')"></i><i class="fa fa-flag-o" id="flag5"  onclick="changeSelection('flag5')"></i></h3>
+                        </div>
+                        <div class="recent-food-entry">
+                            <img src="img/milk.jpg">
+                            <h1 class="recent-food-name">2% Milk</h1>
+                            <h2 class="recent-lac-amount">17mg</h2>
+                            <h3 class="recent-fav"><i class="fa fa-star favorite" id="star6" onclick="changeSelection('star6')"></i><i class="fa fa-flag-o" id="flag6"  onclick="changeSelection('flag6')"></i></h3>
+                        </div>
+                        <div class="recent-food-entry">
+                            <img src="img/cottagecheese.jpg">
+                            <h1 class="recent-food-name">Cottage Cheese</h1>
+                            <h2 class="recent-lac-amount">24mg</h2>
+                            <h3 class="recent-fav"><i class="fa fa-star favorite flag2" id="star7" onclick="changeSelection('star7')"></i><i class="fa fa-flag-o" id="flag7"  onclick="changeSelection('flag7')"></i></h3>
+                        </div>
+                        <div class="recent-food-entry">
+                            <img src="img/ricotta.jpg">
+                            <h1 class="recent-food-name">Ricotta Cheese</h1>
+                            <h2 class="recent-lac-amount">14mg</h2>
+                            <h3 class="recent-fav"><i class="fa fa-star favorite" id="star8" onclick="changeSelection('star8')"></i><i class="fa fa-flag-o" id="flag8"  onclick="changeSelection('flag8')"></i></h3>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -79,20 +83,21 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="mainModalLabel">
-                                <i class="fa fa-search"></i>  <input type="text" placeholder="Search Here">
+                                <i class="fa fa-search"></i> <input type="text" placeholder="Search Here">
+                                <button class="btn btn-primary" onclick="addSearchResults()">SEARCH</button>
                             </h5>
                         </div>
                         <div class="modal-body">
                             <table class="recent-foods">
-                                <th colspan="3">
+                                <th colspan="3" class="header-row">
                                     Your Favorites
                                 </th>
                                 <tr >
                                     <td class="recent-food-name" data-toggle="modal" data-target="#mainModal" onclick="updateData()">2% Milk</td>
                                     <td class="recent-lac-amount" onclick="updateData()">17mg</td>
                                     <td class="recent-fav">
-                                        <i class="fa fa-star favorite" id="star1" onclick="changeSelection(star1)"></i>
-                                        <i class="fa fa-flag-o" id="flag1" onclick="changeSelection(flag1)"></i>
+                                        <i class="fa fa-star favorite" id="star1" onclick="changeSelection('star1')"></i>
+                                        <i class="fa fa-flag-o" id="flag1" onclick="changeSelection('flag1')"></i>
                                     </td>
                                 </tr>
                                 <tr>
@@ -100,7 +105,7 @@
                                     <td class="recent-lac-amount" onclick="updateData()">24mg</td>
                                     <td class="recent-fav">
                                         <i class="fa fa-star" id="star2" onclick="changeSelection('star2')"></i>
-                                        <i class="fa fa-flag-o red-flag" id="flag2"  onclick="changeSelection('flag2')"></i>
+                                        <i class="fa fa-flag-o" id="flag2"  onclick="changeSelection('flag2')"></i>
                                     </td>
                                 </tr>
                                 <tr>
@@ -109,6 +114,54 @@
                                     <td class="recent-fav">
                                         <i class="fa fa-star favorite" id="star3" onclick="changeSelection('star3')"></i>
                                         <i class="fa fa-flag-o" id="flag3"  onclick="changeSelection('flag3')"></i>
+                                    </td>
+                                </tr>
+                                <th colspan="3" class="header-row">
+                                    Search Results
+                                </th>
+                                <tr id="searched-food" data-toggle="modal" data-target="#mainModal">
+                                    <td class="recent-food-name" onclick="updateData()">1% Milk</td>
+                                    <td class="recent-lac-amount" onclick="updateData()">12mg</td>
+                                    <td class="recent-fav">
+                                        <i class="fa fa-star favorite" id="star4" onclick="changeSelection('star4')"></i>
+                                        <i class="fa fa-flag-o" id="flag4"  onclick="changeSelection('flag4')"></i>
+                                    </td>
+                                </tr>
+                            </table>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="mainModal2" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <table class="recent-foods">
+                                <th colspan="3" class="header-row">
+                                    Your Favorites
+                                </th>
+                                <tr>
+                                    <td class="recent-food-name" data-toggle="modal" data-target="#mainModal" onclick="updateData()">2% Milk</td>
+                                    <td class="recent-lac-amount" onclick="updateData()">17mg</td>
+                                    <td class="recent-fav">
+                                        <i class="fa fa-star favorite" id="star9" onclick="changeSelection('star9')"></i>
+                                        <i class="fa fa-flag-o" id="flag9"  onclick="changeSelection('flag9')"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="recent-food-name" onclick="updateData()">Cottage Cheese</td>
+                                    <td class="recent-lac-amount" onclick="updateData()">24mg</td>
+                                    <td class="recent-fav">
+                                        <i class="fa fa-star favorite" id="star10" onclick="changeSelection('star10')"></i>
+                                        <i class="fa fa-flag-o" id="flag10"  onclick="changeSelection('flag10')"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="recent-food-name" onclick="updateData()">Ricotta Cheese</td>
+                                    <td class="recent-lac-amount" onclick="updateData()">14mg</td>
+                                    <td class="recent-fav">
+                                        <i class="fa fa-star favorite" id="star11" onclick="changeSelection('star11')"></i>
+                                        <i class="fa fa-flag-o" id="flag11" onclick="changeSelection('flag11')"></i>
                                     </td>
                                 </tr>
                             </table>                        

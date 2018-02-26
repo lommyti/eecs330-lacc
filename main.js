@@ -5,7 +5,7 @@ var margin = {
     left: 4
 },
     width = 650 - margin.left - margin.right,
-    height = 240 - margin.top - margin.bottom;
+    height = 355 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y%m%d").parse;
 
@@ -106,7 +106,7 @@ function updateData() {
     
         var x = document.getElementById("added-food");
         if (x.style.display === "" | x.style.display === "none") {
-            x.style.display = "table-row";
+            x.style.display = "inline-block";
         }
     }
 
@@ -114,8 +114,33 @@ function updateData() {
 function changeSelection(id) {
     console.log(id);
     var x = document.getElementById(id);
-    if(x.style.color === 'gold'){
+    var style = window.getComputedStyle(x);
+    console.log(style.getPropertyValue('color'));
+    if(style.getPropertyValue('color') == 'rgb(255, 215, 0)' || style.getPropertyValue('color') == 'rgb(255, 0, 0)'){
         x.style.color = '#000';
+    }
+    else{
+        if (id.includes('star')) {
+            console.log(id);
+            x.style.color = 'rgb(255, 215, 0)';
+        }
+        else {
+            x.style.color = 'red';
+        }
     }
 }
 
+function addSearchResults() {
+    var x = document.getElementById("searched-food");
+    if (x.style.display === "" | x.style.display === "none") {
+        x.style.display = "table-row";
+    }
+}
+
+function updateUsername() {
+    var x = document.getElementById("username");
+    var y = document.getElementById("newuser");
+    
+    x.innerHTML = "Welcome back, " + y.value + "!";
+
+}

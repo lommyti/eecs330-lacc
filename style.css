@@ -8,6 +8,18 @@ a:hover, a:active{
     text-decoration: none;
 }
 
+i:hover{
+    cursor: pointer;
+}
+
+::-webkit-scrollbar{
+    width:5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#EF9B2D;
+}
+
 header{
     background: #46ACC2;
     color:#fff;
@@ -36,7 +48,7 @@ header img{
 
 .home-container{
     text-align: center;
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .home-container h1{
@@ -48,14 +60,25 @@ header img{
     width:60px;
 }
 
-.home-container button{
+.home-container a{
+    color:#EF9B2D;
+}
+
+.btn-primary{
     margin-top: 10px;
     background: #46ACC2;
     border:0;
     margin-bottom:7px;
+    width:60%;
+}
+
+.btn-primary:hover{
+    background:#EF9B2D;
+    box-shadow: inset -5px -5px 0px rgba(255,255,255,.5);
 }
 .home-container input{
-    margin: 2px 0px;
+    margin: 6px 0px;
+    width:60%;
 }
 
 .btn-group{
@@ -64,16 +87,17 @@ header img{
 }
 
 .btn-group button{
-    width: 25%;
+    width:21%;
     float:left;
     background: #ddd;
+    text-transform: uppercase;
+    color:#fff;
+    font-weight:bold;
     border: none;
+    padding: 5px 10px;
+    margin-right:3.2px;
 }
 
-.btn-group button:focus{
-    background: #aaa;
-    box-shadow: none;
-}
 
 .graph-border{
     margin-top: 50px;
@@ -83,18 +107,16 @@ header img{
 .recent-foods-header{
     width:100%;
     margin-top: 0px;
-    background: #ddd; 
-    border:4px solid #ddd;
     padding: 10px;
-    letter-spacing: 10px;
+    padding-bottom:0px;
+    letter-spacing: -1px;
     font-weight: 700;
-    font-size: 20px;
-    text-align: center;
+    font-size: 32px;
+    text-align: left;
 }
 
 .recent-foods-border{
-    margin-top:50px;
-    box-shadow: 4px 4px 10px rgba(0,0,0,.2);
+    margin-top:35px;
 }
 
 .recent-foods{
@@ -109,39 +131,35 @@ header img{
     padding: 10px;
 }
 
-.recent-foods tr:nth-child(even) {
-    background: #eee;
-}
-
-.recent-foods tr:nth-child(odd) {
-    background: #ccc;
+.recent-foods tr{
+    padding:10px;
+    border-bottom:2px solid #46ACC2;
 }
 
 .recent-foods .recent-fav{
-    width: 14%;
+    width: 28%;
+    text-align: right;
 }
 
 .recent-foods .recent-fav i{
     margin-right:10px;
+    display:inline-block;
 }
 
 .recent-foods .recent-fav .red-flag{
     color:#FF614C;
 }
 
-.recent-foods .recent-lac-amount{
-    width: 20%;
-}
-
-.recent-foods .recent-food-name{
-    width: 66%;
+.header-row{
+    background: #46acc2;
+    color:#fff;
 }
 
 .favorite{
     color: gold;
 }
 
-#star1, #star2, #star3{
+#star1, #star2, #star3, #star4, #star5, #star6, #star7, #star8, #star9{
     color:gold;
 }
 
@@ -154,24 +172,75 @@ header img{
     display:block;
 }
 
+.recent-food-entry{
+    width:45%;
+    overflow: hidden;
+    display:inline-block;
+    background:#fff;
+    margin:2%;
+    box-shadow:.5px 3px 4px rgba(0,0,0,.15);
+}
+
+.recent-food-entry h1{
+    padding:5px 10px 0px 10px;
+    font-size:18px;
+    font-weight:bold;
+    color:#46ACC2;
+    margin:5px;
+    margin-bottom:3px;
+}
+
+.recent-food-entry:hover h1{
+    color:#ef9b2d;
+    cursor: pointer;
+}
+
+.recent-food-entry h2{
+    padding:0px 10px;
+    margin:0px 5px;
+    padding-bottom:15px;
+    font-size:15px;
+    display:inline-block;
+    float:left;
+}
+
+.recent-food-entry h3{
+    margin:5px;
+    font-size:15px;
+    display:inline-block;
+    float:right;
+}
+
+.recent-food-entry img{
+    width:100%;
+    opacity:.8;
+    transition:.15s ease-in-out;
+}
+
+.recent-food-entry:hover img{
+    opacity:1;
+}
 
 .add-food{
     width: 100%;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .add-food button{
     font-size: 24px;
     padding: 5px 100px;
-    background: #ddd;
+    letter-spacing:4px;
+    background: #46acc2;
+    color:#fff;
+    font-weight:bold;
     border: none;
     box-shadow:4px 4px 10px rgba(0,0,0,.2);
     transition: .1s ease;
 }
 
 .add-food button:hover{
-    background:#bbb;
+    background:#ef9b2d;
     box-shadow:2px 2px 3px rgba(0,0,0,.4);
 }
 
@@ -211,7 +280,8 @@ header img{
 .center{
     text-align: center;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom:15px;
 }
 
 .about{
@@ -237,24 +307,18 @@ header img{
 }
 
 .about button{
-    border:1px solid #fff;
-    outline:5px solid #46ACC2;
     background:#46ACC2;
     padding: 5px 25px;
     color:#fff;
 }
 
-.about button:hover{
-    background: #EF9B2D;
-    outline: 5px solid #EF9B2D;
-}
 
 /* The switch - the box around the slider */
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 47px;
+    height: 21px;
 }
 
 /* Hide default HTML checkbox */
@@ -276,8 +340,8 @@ header img{
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 13px;
+    width: 13px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -286,11 +350,11 @@ header img{
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #EF9B2D;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #EF9B2D;
 }
 
 input:checked + .slider:before {
@@ -312,9 +376,11 @@ input:checked + .slider:before {
     text-align: center;
     float:center;
     border-radius:100%;
-    border:8px solid #fff;
+    border:8px solid rgba(255,255,255,.85);
     box-shadow:4px 4px 10px rgba(0,0,0,.2);
     max-width:200px;
+    position:relative;
+    z-index:5;
 }
 
 .slidecontainer {
@@ -366,4 +432,155 @@ input:checked + .slider:before {
 
 #added-food{
     display: none;
+}
+
+#searched-food{
+    display:none;
+}
+.login-box{
+    text-align: center;
+    background:#fff;
+    padding: 50px 0px;
+    width:30%;
+    z-index:1222;
+    margin: 0 auto;
+    position: relative;
+    box-shadow:4px 4px 10px rgba(0,0,0,.2);
+    outline:10px solid rgba(255,255,255,.25);
+}
+
+.login-box h1{
+    font-weight:700;
+}
+
+.login-box .hero{
+    width:100%;
+    filter:blur(3px);
+    opacity:.5;
+    z-index:-9;
+    position:relative;
+}
+
+.container{
+}
+
+.login-background{
+    width:100%;
+    top:0;
+    z-index:3;
+    height:60%;
+    position: fixed;
+    background:url('img/ice-cream.jpg');
+    overflow: hidden;
+    filter:blur(3px);
+    background-size:cover;
+}
+
+.profile-background{
+    width:100%;
+    top:0;
+    z-index:0;
+    height:56%;
+    position: absolute;
+    background:url('img/latte.jpg');
+    overflow: hidden;
+    filter:blur(3px);
+    background-position:center center;
+    background-size:cover;
+}
+
+.relative{
+    position:relative;
+    z-index:5;
+}
+
+#btn-active{
+    background:#EF9B2D;
+    width:35%;
+}
+
+.full-bar{
+    width:100%;
+    background:#46ACC2;
+    color:#Fff;
+    padding:20px 30px;
+    margin-top: 35px;
+    font-size:20px;
+    letter-spacing:8px;
+    text-transform: uppercase;
+    outline:10px solid rgba(255,255,255,.7);
+}
+
+.modal-title{
+    font-size:26px;
+}
+
+.modal-title input{
+    font-size:14px;
+    border:0;
+    border-bottom:2px solid #46acc2;
+    width:70%;
+    height:40px;
+}
+
+input:focus{
+    box-shadow:0;
+    outline:none;
+}
+
+.modal-title .btn-primary{
+    width:15%;
+    margin-left:15px;
+}
+
+.btn-primary:focus{
+    outline:none;
+}
+
+.about .btn-second{
+    background:#ef9B2f;
+    margin-right:25px;
+}
+
+.confirm{
+    color:#444;
+    font-size:20px;
+    font-weight:bold;
+    border-bottom:2px solid #ef9b2f;
+}
+
+.confirm-body{
+    text-align: center;
+}
+.modal-body button{
+    border:0;
+    padding:10px;
+    margin:10px 5px;
+    font-weight:bold;
+    color:#fff;
+}
+
+.yes{
+    background: #46acc2;
+}
+
+ .overlay{
+    opacity:0;
+    color:#fff;
+    font-size:48px;
+    z-index:9009;
+     line-height:180px;
+     border-radius:100%;
+     position:relative;
+    background:rgba(0,0,0,.65);
+    max-width:180px;
+     margin:0 auto;
+     margin-top: -190px;
+     height:180px;
+     transition: .5s ease;
+}
+
+.overlay:hover{
+    opacity:1;
+    cursor: pointer;
 }

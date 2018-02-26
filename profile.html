@@ -15,33 +15,35 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
-        <header>
+        <header class="relative">
             <a class="header-wordmark" href="home.html">lacc <img src="img/milk.png.png">
             </a>
             <div class="header-icons">
                 <a href="profile.html"><i class="fa fa-2x fa-user"></i></a>
-                <i class="fa fa-2x fa-star"></i>
-                <i class="fa fa-2x fa-search" data-toggle="modal" data-target="#mainModal"></i>
+                <a><i class="fa fa-2x fa-star" data-toggle="modal" data-target="#mainModal3"></i></a>
+                <a><i class="fa fa-2x fa-search" data-toggle="modal" data-target="#mainModal"></i></a>
             </div>
         </header>
-        <div class="container">
-            <div class="center"><img src="img/userpro.jpg" class="user-photo"></div>
-            <h1 class="center">Welcome Back, User!</h1>
+        <div class="profile-background"></div>
+        <div class="container relative">
+            <div class="center"><img src="img/userpro.jpg" class="user-photo">
+            <div class="overlay">+</div></div>
+            <h1 class="center full-bar" id="username">Welcome Back, User!</h1>
 
             <div class="row">
                 <div class="col-md-5 about">
                     <h2>About You</h2><br/>
-                    <b>Your Name:</b><br/> <input type="text" size="50" value="First Last Name"><br /><br/>
+                    <b>Your Name:</b><br/> <input type="text" size="50" value="User" id="newuser"><br /><br/>
                     <b>Email:</b> <br/><input type="text" size="50" value="youremail@u.northwestern.edu"><br/><br />
-                    <b>Lactose Intolerance Level:</b>
-                    <div class="slidecontainer">
-                        <input type="range" min="1" max="100" value="50" class="slider2" id="myRange">
-                    </div>
-                    <span><b>Mild</b></span>
-                    <span class="right-align"><b>Severe</b></span>
-                    <br/><br/><br/>
+                    <b>Lactose Intolerance Level:</b><br />
+                    <input type="radio" name="laclevel"> Mild &nbsp;&nbsp;
+                    <input type="radio" name="laclevel"> Moderate &nbsp;&nbsp;
+                    <input type="radio" name="laclevel"> Severe
+
+
+                    <br/><br/>
                     
-                    <button>Save Changes</button>
+                    <button class="btn btn-primary" onclick="updateUsername()">Save Changes</button>
                 </div>
                 <div class="col-md-5 col-md-offset-2 about">
                     <h2>Settings</h2>
@@ -50,6 +52,116 @@
                         <input type="checkbox">
                         <span class="slider round"></span>
                     </label>
+                    <br/><br/>
+                    <b>Change Your Password:</b><br/>
+                    <input type="password" placeholder="old password..."><br/><br/>
+                    <input type="password" placeholder="new password..."><br/><br/>
+                    <button class="btn btn-second" data-toggle="modal" data-target="#mainModal2">Clear All <i class="fa fa-star"></i> Favorites</button> <button class="btn btn-second" data-toggle="modal" data-target="#mainModal2">Clear All <i class="fa fa-flag-o"></i> Flags</button>
+                    <br/><br/>
+                    <button class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+          
+        </div>
+        <div class="modal fade" id="mainModal2" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content confirm-body">
+                    <div class="modal-body">
+                        <div class="confirm">ARE YOU SURE YOU WANT TO CLEAR THIS SETTING?</div>
+                        <button class="yes" data-toggle="modal" data-target="#mainModal2">DELETE</button>
+                        <button class="no" data-toggle="modal" data-target="#mainModal2">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mainModal3" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <table class="recent-foods">
+                            <th colspan="3" class="header-row">
+                                Your Favorites
+                            </th>
+                            <tr>
+                                <td class="recent-food-name" data-toggle="modal" data-target="#mainModal" onclick="updateData()">2% Milk</td>
+                                <td class="recent-lac-amount" onclick="updateData()">17mg</td>
+                                <td class="recent-fav">
+                                    <i class="fa fa-star favorite" id="star9" onclick="changeSelection('star9')"></i>
+                                    <i class="fa fa-flag-o" id="flag9"  onclick="changeSelection('flag9')"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="recent-food-name" onclick="updateData()">Cottage Cheese</td>
+                                <td class="recent-lac-amount" onclick="updateData()">24mg</td>
+                                <td class="recent-fav">
+                                    <i class="fa fa-star favorite" id="star10" onclick="changeSelection('star10')"></i>
+                                    <i class="fa fa-flag-o" id="flag10"  onclick="changeSelection('flag10')"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="recent-food-name" onclick="updateData()">Ricotta Cheese</td>
+                                <td class="recent-lac-amount" onclick="updateData()">14mg</td>
+                                <td class="recent-fav">
+                                    <i class="fa fa-star favorite" id="star11" onclick="changeSelection('star11')"></i>
+                                    <i class="fa fa-flag-o" id="flag11" onclick="changeSelection('flag11')"></i>
+                                </td>
+                            </tr>
+                        </table>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="mainModalLabel">
+                            <i class="fa fa-search"></i> <input type="text" placeholder="Search Here">
+                            <button class="btn btn-primary" onclick="addSearchResults()">SEARCH</button>
+                        </h5>
+                    </div>
+                    <div class="modal-body">
+                        <table class="recent-foods">
+                            <th colspan="3" class="header-row">
+                                Your Favorites
+                            </th>
+                            <tr >
+                                <td class="recent-food-name" data-toggle="modal" data-target="#mainModal" onclick="updateData()">2% Milk</td>
+                                <td class="recent-lac-amount" onclick="updateData()">17mg</td>
+                                <td class="recent-fav">
+                                    <i class="fa fa-star favorite" id="star1" onclick="changeSelection('star1')"></i>
+                                    <i class="fa fa-flag-o" id="flag1" onclick="changeSelection('flag1')"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="recent-food-name" onclick="updateData()">Cottage Cheese</td>
+                                <td class="recent-lac-amount" onclick="updateData()">24mg</td>
+                                <td class="recent-fav">
+                                    <i class="fa fa-star" id="star2" onclick="changeSelection('star2')"></i>
+                                    <i class="fa fa-flag-o" id="flag2"  onclick="changeSelection('flag2')"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="recent-food-name" onclick="updateData()">Ricotta Cheese</td>
+                                <td class="recent-lac-amount" onclick="updateData()">14mg</td>
+                                <td class="recent-fav">
+                                    <i class="fa fa-star favorite" id="star3" onclick="changeSelection('star3')"></i>
+                                    <i class="fa fa-flag-o" id="flag3"  onclick="changeSelection('flag3')"></i>
+                                </td>
+                            </tr>
+                            <th colspan="3" class="header-row">
+                                Search Results
+                            </th>
+                            <tr id="searched-food" data-toggle="modal" data-target="#mainModal">
+                                <td class="recent-food-name" onclick="updateData()">1% Milk</td>
+                                <td class="recent-lac-amount" onclick="updateData()">12mg</td>
+                                <td class="recent-fav">
+                                    <i class="fa fa-star favorite" id="star4" onclick="changeSelection('star4')"></i>
+                                    <i class="fa fa-flag-o" id="flag4"  onclick="changeSelection('flag4')"></i>
+                                </td>
+                            </tr>
+                        </table>                        
+                    </div>
                 </div>
             </div>
         </div>
