@@ -112,16 +112,13 @@ function updateData() {
 
 
 function changeSelection(id) {
-    console.log(id);
     var x = document.getElementById(id);
     var style = window.getComputedStyle(x);
-    console.log(style.getPropertyValue('color'));
     if(style.getPropertyValue('color') == 'rgb(255, 215, 0)' || style.getPropertyValue('color') == 'rgb(255, 0, 0)'){
         x.style.color = '#000';
     }
     else{
         if (id.includes('star')) {
-            console.log(id);
             x.style.color = 'rgb(255, 215, 0)';
         }
         else {
@@ -130,17 +127,246 @@ function changeSelection(id) {
     }
 }
 
-function addSearchResults() {
-    var x = document.getElementById("searched-food");
-    if (x.style.display === "" | x.style.display === "none") {
-        x.style.display = "table-row";
-    }
-}
+var servingsize1 = 1;
+var servingsize2 = 1;
+var servingsize3 = 1;
+var servingsize4 = 1;
+var servingsize12 = 1;
+var servingsize13 = 1;
+var servingsize14 = 1;
+var servingsize15 = 1;
+
 
 function updateUsername() {
     var x = document.getElementById("username");
     var y = document.getElementById("newuser");
-    
-    x.innerHTML = "Welcome back, " + y.value + "!";
+    if (y.value != ""){
+        x.innerHTML = "Welcome back, " + y.value + "!";
+    }
+    document.getElementById("msg1").innerHTML = "Your changes have been saved."
 
+}
+
+function updateServing1(amt){
+    if (amt == "plus"){
+        servingsize1 += 1;
+    }
+    else if (servingsize1 > 0) {
+        servingsize1 -= 1;
+    }    
+    document.getElementById("food1").innerHTML = servingsize1;
+    
+}function updateServing2(amt){
+    if (amt == "plus"){
+        servingsize2 += 1;
+    }
+    else if (servingsize2 > 0) {
+        servingsize2 -= 1;
+    }    
+    document.getElementById("food2").innerHTML = servingsize2;
+}
+
+function updateServing3(amt){
+    if (amt == "plus"){
+        servingsize3 += 1;
+    }
+    else if (servingsize3 > 0) {
+        servingsize3 -= 1;
+    }    
+    document.getElementById("food3").innerHTML = servingsize3;
+}
+
+function updateServing4(amt){
+    if (amt == "plus"){
+        servingsize4 += 1;
+    }
+    else if (servingsize4 > 0) {
+        servingsize4 -= 1;
+    }
+    document.getElementById("food4").innerHTML = servingsize4;
+}
+
+function updateServing12(amt){
+    if (amt == "plus"){
+        servingsize12 += 1;
+    }
+    else if (servingsize12 > 0) {
+        servingsize12 -= 1;
+    }
+    document.getElementById("food12").innerHTML = servingsize12;
+}
+
+function updateServing13(amt){
+    if (amt == "plus"){
+        servingsize13 += 1;
+    }
+    else if (servingsize13 > 0) {
+        servingsize13 -= 1;
+    }
+    document.getElementById("food13").innerHTML = servingsize13;
+}
+
+function updateServing14(amt){
+    if (amt == "plus"){
+        servingsize14 += 1;
+    }
+    else if (servingsize14 > 0) {
+        servingsize14 -= 1;
+    }
+    document.getElementById("food14").innerHTML = servingsize14;
+}
+
+function updateServing15(amt){
+    if (amt == "plus"){
+        servingsize15 += 1;
+    }
+    else if (servingsize15 > 0) {
+        servingsize15 -= 1;
+    }
+    document.getElementById("food15").innerHTML = servingsize15;
+}
+
+
+function displaySave(){
+    document.getElementById("msg2").innerHTML = "Your changes have been saved."
+}
+
+function mySearchFunction() {
+    // Declare variables 
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("searchinput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("search-result");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        } 
+    }
+}
+
+var lacFilter = false;
+var dannonFilter = false;
+var chobaniFilter = false;
+
+
+function searchLowLactose() {
+    // Declare variables 
+    var filter, table, tr, td, i;
+    filter = ['1mg', '2mg', '3mg', '4mg', '5mg', '6mg', '7mg', '8mg', '9mg', '10mg', '11mg', '12mg', '13mg', '14mg', '15mg'];
+    table = document.getElementById("search-result");
+    tr = table.getElementsByTagName("tr");
+
+
+    if (lacFilter){
+        lacFilter = false;
+        document.getElementById("lacFilter").style.background = "#46acc2";
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                console.log(td.innerHTML);
+                tr[i].style.display = "";
+                } 
+            else {
+                }
+            } 
+        }
+    else{
+        document.getElementById("lacFilter").style.background = "#ef9b2f";
+        lacFilter = true;
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                console.log(td.innerHTML);
+                if (filter.includes(td.innerHTML)) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            } 
+        }
+    }
+
+}
+
+function searchDannon() {
+    // Declare variables 
+    var filter, table, tr, td, i;
+    filter = ['Dannon Yogurt'];
+    table = document.getElementById("search-result");
+    tr = table.getElementsByTagName("tr");
+
+
+    if (dannonFilter){
+        dannonFilter = false;
+        document.getElementById("dannonFilter").style.background = "#46acc2";
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                tr[i].style.display = "";
+            } 
+        }
+    }
+    else{
+        document.getElementById("dannonFilter").style.background = "#ef9b2f";
+        dannonFilter = true;
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                console.log(td.innerHTML);
+                if (filter.includes(td.innerHTML)) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            } 
+        }
+    }
+}
+
+
+function searchChobani() {
+    // Declare variables 
+    var filter, table, tr, td, i;
+    filter = ['Chobani Yogurt'];
+    table = document.getElementById("search-result");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+
+    if (chobaniFilter){
+        chobaniFilter = false;
+        document.getElementById("chobaniFilter").style.background = "#46acc2";
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                tr[i].style.display = "";
+            } 
+        }
+    }
+    else{
+        document.getElementById("chobaniFilter").style.background = "#ef9b2f";
+        chobaniFilter = true;
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                console.log(td.innerHTML);
+                if (filter.includes(td.innerHTML)) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            } 
+        }
+    }
 }

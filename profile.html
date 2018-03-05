@@ -21,29 +21,29 @@
             <div class="header-icons">
                 <a href="profile.html"><i class="fa fa-2x fa-user"></i></a>
                 <a><i class="fa fa-2x fa-star" data-toggle="modal" data-target="#mainModal3"></i></a>
-                <a><i class="fa fa-2x fa-search" data-toggle="modal" data-target="#mainModal"></i></a>
+                <a href="index.html"><i class="fa fa-2x fa-sign-out"></i></a>
             </div>
         </header>
         <div class="profile-background"></div>
         <div class="container relative">
-            <div class="center"><img src="img/userpro.jpg" class="user-photo">
-            <div class="overlay">+</div></div>
-            <h1 class="center full-bar" id="username">Welcome Back, User!</h1>
-
+            <div class="row">
+                <div class="center"><img src="img/userpro.jpg" class="user-photo">
+                <div class="overlay">+</div></div>
+                <h1 class="center full-bar" id="username">Welcome Back, Lisa Smith!</h1>
+            </div>
             <div class="row">
                 <div class="col-md-5 about">
                     <h2>About You</h2><br/>
-                    <b>Your Name:</b><br/> <input type="text" size="50" value="User" id="newuser"><br /><br/>
-                    <b>Email:</b> <br/><input type="text" size="50" value="youremail@u.northwestern.edu"><br/><br />
+                    <b>Your Name:</b><br/> <input type="text" size="50" placeholder="Lisa Smith" id="newuser"><br /><br/>
+                    <b>Email:</b> <br/><input type="text" size="50" placeholder="lisasmith@u.northwestern.edu"><br/><br />
                     <b>Lactose Intolerance Level:</b><br />
                     <input type="radio" name="laclevel"> Mild &nbsp;&nbsp;
                     <input type="radio" name="laclevel"> Moderate &nbsp;&nbsp;
                     <input type="radio" name="laclevel"> Severe
-
-
                     <br/><br/>
                     
                     <button class="btn btn-primary" onclick="updateUsername()">Save Changes</button>
+                    <div id="msg1"></div>
                 </div>
                 <div class="col-md-5 col-md-offset-2 about">
                     <h2>Settings</h2>
@@ -58,7 +58,8 @@
                     <input type="password" placeholder="new password..."><br/><br/>
                     <button class="btn btn-second" data-toggle="modal" data-target="#mainModal2">Clear All <i class="fa fa-star"></i> Favorites</button> <button class="btn btn-second" data-toggle="modal" data-target="#mainModal2">Clear All <i class="fa fa-flag-o"></i> Flags</button>
                     <br/><br/>
-                    <button class="btn btn-primary">Save Changes</button>
+                    <button class="btn btn-primary" onclick="displaySave()">Save Changes</button>
+                    <div id="msg2"></div>
                 </div>
             </div>
           
@@ -117,7 +118,6 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="mainModalLabel">
                             <i class="fa fa-search"></i> <input type="text" placeholder="Search Here">
-                            <button class="btn btn-primary" onclick="addSearchResults()">SEARCH</button>
                         </h5>
                     </div>
                     <div class="modal-body">
@@ -152,14 +152,16 @@
                                     <i class="fa fa-flag-o spaced" id="flag3"  onclick="changeSelection('flag3')"></i>
                                 </td>
                             </tr>
-                            <th colspan="3" class="header-row">
+                        </table>
+                        <table class="recent-foods side">
+                            <th colspan="3" class="header-row side">
                                 Search Results
                             </th>
-                            <tr id="searched-food" data-toggle="modal" data-target="#mainModal">
+                            <tr id="searched-food">
                                 <td class="recent-food-name" onclick="updateData()">1% Milk</td>
                                 <td class="recent-lac-amount" onclick="updateData()">12mg</td>
                                 <td class="recent-fav">
-                                    <i class="fa fa-caret-left"></i>&nbsp;&nbsp;1&nbsp; <i class="fa fa-caret-right"></i>
+                                    <i class="fa fa-caret-left" onclick="updateServing4('minus')"></i>&nbsp;&nbsp;<div id="food4">1</div>&nbsp; <i class="fa fa-caret-right" onclikc="updateServing4('plus')"></i>
                                     <i class="fa fa-star favorite spaced" id="star4" onclick="changeSelection('star4')"></i>
                                     <i class="fa fa-flag-o spaced" id="flag4"  onclick="changeSelection('flag4')"></i>
                                 </td>
