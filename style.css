@@ -39,6 +39,10 @@ header a{
     color: #fff;
 }
 
+.color-bg{
+    background: #ccc;
+}
+
 header img{
     display: inline-block;
     -webkit-filter: invert(100%);
