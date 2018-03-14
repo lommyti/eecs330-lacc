@@ -169,8 +169,12 @@ header img{
     color: gold;
 }
 
-#star1, #star2, #star3, #star4, #star5, #star6, #star7, #star8, #star9{
+#star1, #star2, #star3, #star5, #star6, #star7, #star8, #star9{
     color:gold;
+}
+
+#star4, #star12, #star13, #star14, #star15{
+    color:#000;
 }
 
 .recent-foods tr:hover{
@@ -642,4 +646,44 @@ input:focus{
 
 .fa-caret-right{
     margin-right:10px;
+}
+
+
+
+.btn-profile:active:focus{
+    background:#46acc2;
+    color:#fff;
+}
+
+
+.btn-profile:active{
+    background:#ef9b2f !important;
+    color:#fff !important;
+}
+
+.btn-profile:active, .btn-profile:selected, .btn-profile:focus, .btn-profile:visited{
+    background:#ef9b2f !important;
+    color:#fff !important;
+}
+
+.btn-profile{
+    margin-top: 10px;
+    background: #ef9b2f;
+    border:0;
+    margin-bottom:7px;
+    width:60%;
+    border-radius:4px;
+}
+
+.btn-profile:hover{
+    background:#ef9b2f;
+    box-shadow: inset -5px -5px 0px rgba(255,255,255,.5);
+}
+
+.btn-profile:target{
+    color:#fff;
+}
+
+.no-button{
+    background:#ccc;
 }

@@ -42,7 +42,7 @@
                     <input type="radio" name="laclevel"> Severe
                     <br/><br/>
                     
-                    <button class="btn btn-primary" onclick="updateUsername()">Save Changes</button>
+                    <button class="btn-profile" onclick="updateUsername()">Save Changes</button>
                     <div id="msg1"></div>
                 </div>
                 <div class="col-md-5 col-md-offset-2 about">
@@ -56,9 +56,10 @@
                     <b>Change Your Password:</b><br/>
                     <input type="password" placeholder="old password..."><br/><br/>
                     <input type="password" placeholder="new password..."><br/><br/>
+                    <input type="password" placeholder="confirm password..."><br/><br/>
                     <button class="btn btn-second" data-toggle="modal" data-target="#mainModal2">Clear All <i class="fa fa-star"></i> Favorites</button> <button class="btn btn-second" data-toggle="modal" data-target="#mainModal2">Clear All <i class="fa fa-flag-o"></i> Flags</button>
                     <br/><br/>
-                    <button class="btn btn-primary" onclick="displaySave()">Save Changes</button>
+                    <button class="btn-profile" onclick="displaySave()">Save Changes</button>
                     <div id="msg2"></div>
                 </div>
             </div>
@@ -70,7 +71,7 @@
                     <div class="modal-body">
                         <div class="confirm">ARE YOU SURE YOU WANT TO CLEAR THIS SETTING?</div>
                         <button class="yes" data-toggle="modal" data-target="#mainModal2">DELETE</button>
-                        <button class="no" data-toggle="modal" data-target="#mainModal2">CANCEL</button>
+                        <button class="no-button" data-toggle="modal" data-target="#mainModal2">CANCEL</button>
                     </div>
                 </div>
             </div>

@@ -120,6 +120,12 @@ function changeSelection(id) {
     else{
         if (id.includes('star')) {
             x.style.color = 'rgb(255, 215, 0)';
+            console.log("this is what's happening");
+            var row = document.getElementById("favs").insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = "swag";
+            cell2.innerHTML = "fire";
         }
         else {
             x.style.color = 'red';
@@ -253,14 +259,14 @@ function mySearchFunction() {
 }
 
 var lacFilter = false;
-var dannonFilter = false;
-var chobaniFilter = false;
+var tenFilter = false;
+var fifteenFilter = false;
 
 
 function searchLowLactose() {
     // Declare variables 
     var filter, table, tr, td, i;
-    filter = ['1mg', '2mg', '3mg', '4mg', '5mg', '6mg', '7mg', '8mg', '9mg', '10mg', '11mg', '12mg', '13mg', '14mg', '15mg'];
+    filter = ['1mg', '2mg', '3mg', '4mg', '5mg', '6mg', '7mg', '8mg', '9mg', '10mg', '11mg', '12mg', '13mg', '14mg', '15mg', '16mg', '17mg', '18mg', '19mg', '20mg'];
     table = document.getElementById("search-result");
     tr = table.getElementsByTagName("tr");
 
@@ -282,6 +288,10 @@ function searchLowLactose() {
     else{
         document.getElementById("lacFilter").style.background = "#ef9b2f";
         lacFilter = true;
+        fifteenFilter = false;
+        tenFilter = false;
+        document.getElementById("fifteenFilter").style.background = "#46acc2";
+        document.getElementById("tenFilter").style.background = "#46acc2";
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[1];
@@ -298,30 +308,34 @@ function searchLowLactose() {
 
 }
 
-function searchDannon() {
+function search10() {
     // Declare variables 
     var filter, table, tr, td, i;
-    filter = ['Dannon Yogurt'];
+    filter = ['1mg', '2mg', '3mg', '4mg', '5mg', '6mg', '7mg', '8mg', '9mg', '10mg'];
     table = document.getElementById("search-result");
     tr = table.getElementsByTagName("tr");
 
 
-    if (dannonFilter){
-        dannonFilter = false;
-        document.getElementById("dannonFilter").style.background = "#46acc2";
+    if (tenFilter){
+        tenFilter = false;
+        document.getElementById("tenFilter").style.background = "#46acc2";
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
+            td = tr[i].getElementsByTagName("td")[1];
             if (td) {
                 tr[i].style.display = "";
             } 
         }
     }
     else{
-        document.getElementById("dannonFilter").style.background = "#ef9b2f";
-        dannonFilter = true;
+        document.getElementById("tenFilter").style.background = "#ef9b2f";
+        document.getElementById("lacFilter").style.background = "#46acc2";
+        document.getElementById("fifteenFilter").style.background = "#46acc2";
+        tenFilter = true;
+        lacFilter = false;
+        fifteenFilter = false;
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
+            td = tr[i].getElementsByTagName("td")[1];
             if (td) {
                 console.log(td.innerHTML);
                 if (filter.includes(td.innerHTML)) {
@@ -335,30 +349,34 @@ function searchDannon() {
 }
 
 
-function searchChobani() {
+function search15() {
     // Declare variables 
     var filter, table, tr, td, i;
-    filter = ['Chobani Yogurt'];
+    filter = ['1mg', '2mg', '3mg', '4mg', '5mg', '6mg', '7mg', '8mg', '9mg', '10mg', '11mg', '12mg', '13mg', '14mg', '15mg'];
     table = document.getElementById("search-result");
     tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query
 
-    if (chobaniFilter){
-        chobaniFilter = false;
-        document.getElementById("chobaniFilter").style.background = "#46acc2";
+    if (fifteenFilter){
+        fifteenFilter = false;
+        document.getElementById("fifteenFilter").style.background = "#46acc2";
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
+            td = tr[i].getElementsByTagName("td")[1];
             if (td) {
                 tr[i].style.display = "";
             } 
         }
     }
     else{
-        document.getElementById("chobaniFilter").style.background = "#ef9b2f";
-        chobaniFilter = true;
+        document.getElementById("fifteenFilter").style.background = "#ef9b2f";
+        document.getElementById("tenFilter").style.background = "#46acc2";
+        document.getElementById("lacFilter").style.background = "#46acc2";
+        fifteenFilter = true;
+        lacFilter = false;
+        tenFilter = false;
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
+            td = tr[i].getElementsByTagName("td")[1];
             if (td) {
                 console.log(td.innerHTML);
                 if (filter.includes(td.innerHTML)) {

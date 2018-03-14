@@ -98,13 +98,13 @@
                                 <h6>Filters:</h6>                            
                             </h5>
 
-                            <button class="btn btn-primary" onclick="searchLowLactose()" id="lacFilter">Less than 15mg Lactose</button>
-                            <button class="btn btn-primary" onclick="searchChobani()" id="chobaniFilter">Chobani</button>
-                            <button class="btn btn-primary" onclick="searchDannon()" id="dannonFilter">Dannon</button>
+                            <button class="btn btn-primary" onclick="searchLowLactose()" id="lacFilter">Less than 20mg Lactose</button>
+                            <button class="btn btn-primary" onclick="search15()" id="fifteenFilter">Less than 15mg Lactose</button>
+                            <button class="btn btn-primary" onclick="search10()" id="tenFilter">Less than 10mg Lactose</button>
 
                         </div>
                         <div class="modal-body">
-                            <table class="recent-foods">
+                            <table class="recent-foods" id="favs">
                                 <th colspan="3" class="header-row">
                                     Your Favorites
                                 </th>
@@ -118,8 +118,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="recent-food-name" onclick="updateData()">Cottage Cheese</td>
-                                    <td class="recent-lac-amount" onclick="updateData()">24mg</td>
+                                    <td class="recent-food-name">Cottage Cheese</td>
+                                    <td class="recent-lac-amount">24mg</td>
                                     <td class="recent-fav">
                                         <i class="fa fa-caret-left" onclick="updateServing2('minus')"></i>&nbsp;&nbsp;<div id="food2">1</div>&nbsp; <i class="fa fa-caret-right" onclick="updateServing2('plus')"></i>
                                         <i class="fa fa-star spaced" id="star2" onclick="changeSelection('star2')"></i>
@@ -206,8 +206,8 @@
                     <div class="modal-content confirm-body">
                         <div class="modal-body">
                             <div class="confirm">ARE YOU SURE YOU WANT TO LOG OUT?</div>
-                            <a href="/index.html"><button class="yes">DELETE</button></a>
-                            <button class="no" data-toggle="modal" data-target="#mainModal4">CANCEL</button>
+                            <a href="/eecs330-lacc"><button class="yes">YES, LOG OUT</button></a>
+                            <button class="no-button" data-toggle="modal" data-target="#mainModal4">CANCEL</button>
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <table class="recent-foods">
+                            <table class="recent-foods" id="favs">
                                 <th colspan="3" class="header-row">
                                     Your Favorites
                                 </th>
