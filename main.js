@@ -403,3 +403,18 @@ function switchEmail(){
         document.getElementById("newpass").style.display = "block";
     }
 }
+
+function tryLogIn(){
+    var u = document.getElementById("user").value;
+    var p = document.getElementById("pass").value;
+
+    if (u == "user1" && p =="pass1"){
+        window.location.href = "home.html";
+    }
+    else if (u == "rachel" && p == "weloveeecs330"){
+        window.location.href= "homeuser2.html";
+    }
+    else{
+        document.getElementById("error").style.display = "block";
+    }
+}

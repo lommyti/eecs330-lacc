@@ -764,3 +764,9 @@ input:focus{
 .recent-fav td button{
     width:auto;
 }
+
+#error{
+    display:none;
+    color:#EF9B2D;
+    font-weight:bold;
+}

@@ -19,9 +19,13 @@
         <div class="container home-container">
             <div class="login-box">
                 <h1>lacc <img src="img/milk.png.png" class="logo"></h1>
-                <input type="text" placeholder="username"><br />
-                <input type="password" placeholder="password"><br />
-                <a href="home.html"><button class="btn-profile2">LOG IN</button></a><br />
+                <input type="text" placeholder="username" id="user"><br />
+                <input type="password" placeholder="password" id="pass"><br />
+                <button class="btn-profile2" onclick="tryLogIn()">LOG IN</button>
+                <br />
+                <div id="error">
+                    Not a valid login. Please try again.<br/><br/>
+                </div>
                 <p>don't have an account? <a data-toggle="modal" data-target="#mainModal6" class="home-links">sign up!</a><br />
                 <a data-toggle="modal" data-target="#mainModal7" class="home-links">forgot your password?</a></p>
             </div>
