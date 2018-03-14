@@ -208,10 +208,6 @@ header img{
     margin-bottom:3px;
 }
 
-.recent-food-entry:hover h1{
-    color:#ef9b2d;
-    cursor: pointer;
-}
 
 .recent-food-entry h2{
     padding:0px 10px;
@@ -256,6 +252,10 @@ header img{
 .add-food button:hover{
     background:#ef9b2d;
     box-shadow:2px 2px 3px rgba(0,0,0,.4);
+}
+
+.add-food button:focus{
+    outline:0;
 }
 
 .header-icons{
@@ -472,7 +472,7 @@ input:checked + .slider:before {
     background:#fff;
     padding: 50px 0px;
     width:30%;
-    z-index:1222;
+    z-index:999;
     margin: 0 auto;
     position: relative;
     box-shadow:4px 4px 10px rgba(0,0,0,.2);
@@ -601,12 +601,22 @@ input:focus{
     padding:10px;
     margin:10px 5px;
     margin-right:0;
+    margin-left:0;
+    width:auto;
     font-weight:bold;
     color:#fff;
 }
 
 .yes{
     background: #46acc2;
+}
+
+.yes:hover{
+    background:#ef9b2f;
+}
+
+.no-button:hover{
+    background:#999;
 }
 
  .overlay{
@@ -674,10 +684,15 @@ input:focus{
     margin-top: 10px;
     background: #ef9b2f;
     border:0;
+    border:none;
+    outline:none;
+    box-shadow: none;
     margin-bottom:7px;
     width:60%;
     border-radius:4px;
+    color:#fff;
 }
+
 
 .btn-profile:hover{
     background:#ef9b2f;
@@ -690,4 +705,62 @@ input:focus{
 
 .no-button{
     background:#ccc;
+}
+
+.home-links:hover{
+    color:#46acc2;
+}
+
+#favs tr{
+    padding:20px;
+}
+
+#favs td{
+    padding:10px 0px;
+}
+
+.signuppass{
+    margin:5px 0px;
+}
+
+.signupuser{
+    margin-top:10px;
+}
+
+#newpass{
+    display:none;
+}
+
+#getnew{
+    display:block;
+}
+
+
+.btn-profile2{
+    width:60%;
+    border:0;
+    box-shadow:0;
+    color:#fff;
+    padding:8px 20px;
+    margin: 10px 0px;
+    border-radius:4px;
+    background: #46acc2;
+    transition: .2s ease;
+}
+
+.btn-profile2:hover{
+    background:#EF9B2D;
+    box-shadow: inset -5px -5px 0px rgba(255,255,255,.5);
+}
+
+.btn-profile2:active{
+    outline:0;
+}
+
+.btn-profile2:focus{
+    outline:0;
+}
+
+.recent-fav td button{
+    width:auto;
 }

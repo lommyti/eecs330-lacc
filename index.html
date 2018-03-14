@@ -2,10 +2,18 @@
     <head>
         <title>Lacc</title>
         <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="https://use.fontawesome.com/1f7de367f8.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
     </head>
     <body>
         <div class="container home-container">
@@ -13,12 +21,50 @@
                 <h1>lacc <img src="img/milk.png.png" class="logo"></h1>
                 <input type="text" placeholder="username"><br />
                 <input type="password" placeholder="password"><br />
-                <a href="home.html"><button class="btn btn-primary">LOG IN</button></a><br />
-                <p>don't have an account? <a href="/signup">sign up!</a><br />
-                <a href="/lostpassword">forgot your password?</a></p>
+                <a href="home.html"><button class="btn-profile2">LOG IN</button></a><br />
+                <p>don't have an account? <a data-toggle="modal" data-target="#mainModal6" class="home-links">sign up!</a><br />
+                <a data-toggle="modal" data-target="#mainModal7" class="home-links">forgot your password?</a></p>
             </div>
         </div>
         <div class="login-background"></div>
-
+        
+        
+        <div class="modal fade" id="mainModal6" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content confirm-body">
+                    <div class="modal-body">
+                        <div class="confirm">SIGN UP FOR AN ACCOUNT!</div>
+                        <input type="text" placeholder="username" class="signupuser"><br/>
+                        <input type="password" placeholder="password" class="signuppass"><br/>
+                        <a href="home.html"><button class="yes">SIGN UP</button></a>
+                        <button class="no-button" data-toggle="modal" data-target="#mainModal6">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+        <div class="modal fade" id="mainModal7" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content confirm-body">
+                    <div class="modal-body">
+                        <div class="confirm">FORGOT YOUR PASSWORD?</div><br/>
+                        <p>Enter your email address here to receive a 4-digit verification code. Then enter the code and choose a new password to log into your account! </p>
+                        <div id="getnew">
+                            <input type="text" placeholder="your email" class="signupuser"><br/>
+                            <button class="yes" onclick="switchEmail()">SUBMIT EMAIL</button>
+                        </div>
+                        <div id="newpass">
+                            <input type="text" name="pin" placeholder="4-digit code" maxlength="4"><br/>
+                            <input type="password" placeholder="new password" class="signuppass"><br/>
+                            <a href="home.html"><button class="yes">REPLACE PASSWORD & LOG IN</button></a>
+                            <button class="no-button" onclick="switchEmail()">GO BACK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="main.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     </body>
 </html>

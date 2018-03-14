@@ -388,3 +388,18 @@ function search15() {
         }
     }
 }
+
+var switchEmailOff = true;
+
+function switchEmail(){
+    if(switchEmailOff){
+        document.getElementById("getnew").style.display = "block";
+        document.getElementById("newpass").style.display = "none";
+        switchEmailOff = false;
+    }
+    else{
+        switchEmailOff = true;
+        document.getElementById("getnew").style.display = "none";
+        document.getElementById("newpass").style.display = "block";
+    }
+}
