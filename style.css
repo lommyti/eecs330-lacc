@@ -715,6 +715,13 @@ input:focus{
     padding:20px;
 }
 
+#favs td{
+    padding:10px 0px;
+}
+
+#favs i{
+    margin-right:10px;
+}
 
 .signuppass{
     margin:5px 0px;
